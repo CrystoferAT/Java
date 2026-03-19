@@ -6,8 +6,6 @@ public class Exercicio03 {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         ArrayList<Float> operacoes = new ArrayList<>();
-        ArrayList<Float> credito = new ArrayList<>();
-        ArrayList<Float> debito = new ArrayList<>();
 
         float valores, totcred = 0, totdeb = 0, cpmf = 0, saldoinicial = 0, saldo = 0;
 
@@ -21,10 +19,8 @@ public class Exercicio03 {
             if(valores != 0){
                 operacoes.add(valores);
                 if(valores < 0){
-                debito.add(valores);
-                totdeb += valores;
+                totdeb += Math.abs(Math.abs(valores));
                 }else{
-                    credito.add(valores);
                     totcred += valores;
                 }
             }
@@ -32,7 +28,7 @@ public class Exercicio03 {
         }while(valores != 0);
 
         cpmf +=  totdeb * 0.004;
-        saldo = saldoinicial + (totcred + totdeb) + cpmf;
+        saldo = saldoinicial + totcred - totdeb - cpmf;
 
         System.out.println("____________________________________");
 
@@ -42,11 +38,10 @@ public class Exercicio03 {
 
         System.out.println("\n____________________________________");
         System.out.printf("\nTotal de creditos: R$%.2f", totcred);
-        System.out.printf("\nTotal de creditos: R$%.2f", totdeb);
-        System.out.printf("\nTotal de creditos: R$%.2f", cpmf);
-        System.out.printf("\nTotal de creditos: R$%.2f" , saldo);
+        System.out.printf("\nTotal de debitos: R$%.2f", totdeb);
+        System.out.printf("\nTotal de CPMF: R$%.2f", cpmf);
+        System.out.printf("\nSaldo Final: R$%.2f" , saldo);
 
         scanner.close();
-    }
-    
+    } 
 }
