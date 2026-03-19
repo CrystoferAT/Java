@@ -31,33 +31,46 @@ public class Exercicio04 {
                             
                             break;
                     case 2:
-                        for(String aluno : alunos){
-                            System.out.println(aluno);
+                        if(alunos.isEmpty()){
+                            System.out.println("Nenhum aluno cadastrado!");
+                        }else{
+                            for(String aluno : alunos){
+                                System.out.println(aluno);
+                            }
                         }
                         break;
                     case 3:
-                        System.out.print("Digite o nome do aluno para buscar:");
-                        String nomeBusca = scanner.nextLine().trim();
-                            
-                            if(alunos.contains(nomeBusca)){
-                                System.out.printf("Aluno %s esta na lista\n", nomeBusca);
-                            }else{
-                                System.out.printf("Aluno %s nao esta na lista\n", nomeBusca);
-                            }
-                            
+                        if(alunos.isEmpty()){
+                            System.out.println("Nenhum aluno cadastrado!");
+                        }else{
+                            System.out.print("Digite o nome do aluno para buscar:");
+                            String nomeBusca = scanner.nextLine().trim();
+                                
+                                if(alunos.contains(nomeBusca)){
+                                    System.out.printf("Aluno %s esta na lista\n", nomeBusca);
+                                }else{
+                                    System.out.printf("Aluno %s nao esta na lista\n", nomeBusca);
+                                }
+                        }
                             break;
                     case 4:
-                        System.out.print("Digite o nome do aluno para ser removido:");
-                        String nomeDel = scanner.nextLine().trim();
-                            
+                        if(alunos.isEmpty()){
+                            System.out.println("Nenhum aluno cadastrado!");
+                        }else{
+                            System.out.print("Digite o nome do aluno para ser removido:");
+                            String nomeDel = scanner.nextLine().trim();
+                                
                             if(alunos.contains(nomeDel)){
                                 alunos.remove(nomeDel);
                                 System.out.printf("Aluno %s removido com sucesso.\n", nomeDel);
                             }else{
                                 System.out.printf("Aluno %s nao esta na lista.\n", nomeDel);
                             }
-                            
-                            break;    
+                        }
+                            break; 
+                    case 5:
+                        System.out.println("Saiu!");
+                        break;   
                     default:
                         System.out.println("Opcao invalida");
                         break;
