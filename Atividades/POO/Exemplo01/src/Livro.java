@@ -4,9 +4,10 @@ public class Livro {
     int ano;
 
     public void exibirInfo(){
-        System.out.println(this.titulo);
-        System.out.println(this.autor);
-        System.out.println(this.ano);
+        System.out.println("Titulo: " + this.titulo);
+        System.out.println("Autor: " + this.autor);
+        System.out.println("Ano: " + this.ano);
+        System.out.println();
     }
 
 }
