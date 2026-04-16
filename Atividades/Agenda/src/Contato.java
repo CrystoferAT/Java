@@ -26,7 +26,7 @@ public class Contato {
         this.email = email;   
     }
 
-    public void setTelefone(){
+    public void setTelefone(String telefone){
         this.telefone = telefone;
     }
 
