@@ -170,6 +170,9 @@ public class Agenda {
             if(lista.get(i).getNome().equalsIgnoreCase(nomeBusca)){
                 lista.remove(i);
                 System.out.println("Contato Removido!");
+
+                encontrado = true;
+                break;
             }
         }
 
