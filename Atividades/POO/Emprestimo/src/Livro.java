@@ -1,23 +1,26 @@
-class Livro extends Item {
+class Livro {
+    private String titulo;
     private String autor;
+    int anoDePublicacao;
     private int numeroDePaginas;
 
     Livro(String titulo, int anoPublicacao, String autor, int numeroPaginas) {
-        super(titulo, anoPublicacao);
+        this.titulo = titulo;
         this.autor = autor;
+        this.anoDePublicacao = anoPublicacao;
         this.numeroDePaginas = numeroPaginas;
     }
 
-    public void setAutor(String autor ){
-        this.autor = autor;
-    }
-
-    public void setNumeroDePaginas(int numeroDePaginas){
-        this.numeroDePaginas = numeroDePaginas;
+    public String getTitulo(){
+        return titulo;
     }
 
     public String getAutor(){
         return autor;
+    }
+
+    public int getAnoDePublicacao(){
+        return anoDePublicacao;
     }
 
     public int getNumeroDePaginas(){
@@ -26,6 +29,6 @@ class Livro extends Item {
 
     @Override
     public String toString(){
-        return super.toString() +", Autor: " + autor + ", Numero de Paginas: " + numeroDePaginas;
+        return "Titulo" + titulo + ", Autor: " + autor + "Ano de Publicacao" + anoDePublicacao + ", Numero de Paginas: " + numeroDePaginas;
     }
 }

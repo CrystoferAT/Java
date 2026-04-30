@@ -2,6 +2,11 @@ class Item{
     private String titulo;
     private int anoDePublicacao;
 
+    Item(String titulo, int anoDePublicacao) {
+        this.titulo = titulo;
+        this.anoDePublicacao = anoDePublicacao;
+    }
+
     public void setTitulo(String titulo){
         this.titulo = titulo; 
     }
@@ -20,7 +25,7 @@ class Item{
 
     @Override
     public String toString(){
-        return toString() + titulo + anoDePublicacao;
+        return  "Titulo: " +titulo + ", Ano: " + anoDePublicacao;
     }
     
 }
