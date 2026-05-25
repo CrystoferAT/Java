@@ -30,30 +30,30 @@ public class App {
         Duration diferenca = Duration.between(hora, agora);
 
         long horas = diferenca.toHours();
-        long minutos = diferenca.toMinutes() % 60;
+        long totalMinutos = diferenca.toMinutes();
 
         double total = 5.0;
 
-        long minutosRestantes = minutos - 60;
+        long minutosRestantes = totalMinutos % 60;
 
-        if(minutosRestantes <= 60){
-            total += 0.0;
-        }else {
-            while(minutosRestantes != 0){
+        if(totalMinutos >= 60){
+            long excedente = totalMinutos - 60;
+        
+            while(excedente > 0){
                 total += 2.0;
-                minutosRestantes -= 15;
+                excedente -= 15;
             }
         }
 
         System.out.println("-------------------");
         System.out.println("-------Recibo------");
         System.out.println("-------------------");
-        System.out.println("Placa:" + marca);
-        System.out.println("Placa:" + modelo);
-        System.out.println("Placa:" + placa);
-        System.out.println("Entrada" + hora);
-        System.out.println("Saida" + agora.format(formatoHora));
-        System.out.println("Tempo:" + horas +"h" + minutos + "min");
+        System.out.println("Placa: " + marca);
+        System.out.println("Placa: " + modelo);
+        System.out.println("Placa: " + placa);
+        System.out.println("Entrada: " + hora);
+        System.out.println("Saida: " + agora.format(formatoHora));
+        System.out.println("Tempo: " + horas +"h" + minutosRestantes + "min");
         System.out.println("Total: R$"+ total);
 
         scanner.close();
